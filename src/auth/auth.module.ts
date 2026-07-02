@@ -11,6 +11,7 @@ import { ConfigType } from '@nestjs/config';
 import { JwtStrategy } from './jwt.strategy';
 import { LocalStrategy } from './local.strategy';
 import { GoogleIdTokenStrategy } from './strategies/google-id.strategy';
+import { JwtRefreshStrategy } from './strategies/jwt-refresh.strategy';
 import { UserRole } from './entities/user-role.entity';
 import { User } from '../user/entities/user.entity';
 import { Commerce } from '../commerce/entities/commerce.entity';
@@ -43,6 +44,7 @@ import { CommerceModule } from '../commerce/commerce.module';
   providers: [
     AuthService,
     JwtStrategy,
+    JwtRefreshStrategy,
     LocalStrategy,
     GoogleIdTokenStrategy,
     UserRoleService,

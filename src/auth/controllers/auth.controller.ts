@@ -228,14 +228,14 @@ export class AuthController {
     return result;
   }
 
-  @UseGuards(AuthGuard('jwt'))
+  @UseGuards(AuthGuard('jwt-refresh'))
   @Post('/refresh')
   @HttpCode(HttpStatus.OK)
   @ApiBearerAuth()
   @ApiOperation({
     summary: 'Refrescar el token JWT',
     description:
-      'Genera un nuevo access_token basado en el token actual válido.',
+      'Genera un nuevo access_token usando el token actual (incluso si está expirado).',
   })
   @ApiResponse({
     status: 201,
